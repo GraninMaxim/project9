@@ -1,0 +1,49 @@
+﻿<Window x:Class="project9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project9"
+        mc:Ignorable="d"
+        Title="Практическая работа №9" Height="446" Width="800">
+    <Grid Background="#FFDBF5F6">
+        <DataGrid x:Name="dataGrid" Margin="0,10,0,0" Height="150" Width="757" VerticalAlignment="Top" HorizontalAlignment="Center" Background="#FFD2D7F7">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding Path = LessonName}"/>
+                <DataGridTextColumn Header="ФИО лектора" Binding="{Binding Path = LecturerName}"/>
+                <DataGridTextColumn Header="Номер аудитории" Binding="{Binding Path = AudienceNumber}"/>
+                <DataGridTextColumn Header="Кол-во часов в семестре" Binding="{Binding Path = HoursCount}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="Исходные данные" Margin="10,171,0,0" Height="225" Width="350" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Название предмета: " HorizontalAlignment="Left" Height="31" Margin="10,0,0,0" VerticalAlignment="Center" Width="174"/>
+                <TextBox x:Name="inputLessonName" HorizontalAlignment="Left" Height="31" Margin="189,0,0,0"  VerticalAlignment="Center" Width="128"/>
+                <Label Content="ФИО лектора: " HorizontalAlignment="Left" Height="31" Margin="10,0,0,0" VerticalAlignment="Center" Width="174" Grid.Row="1"/>
+                <TextBox x:Name="inputLecturerName" HorizontalAlignment="Left" Height="31" Margin="189,0,0,0"  VerticalAlignment="Center" Width="128" Grid.Row="1"/>
+                <Label Content="Номер аудитории: " HorizontalAlignment="Left" Height="31" Margin="10,0,0,0" VerticalAlignment="Center" Width="174" Grid.Row="2"/>
+                <TextBox x:Name="inputAudienceNumber" HorizontalAlignment="Left" Height="31" Margin="189,0,0,0"  VerticalAlignment="Center" Width="128" Grid.Row="2"/>
+                <Label Content="Кол-во часов в семестре: " HorizontalAlignment="Left" Height="31" Margin="10,0,0,0" VerticalAlignment="Center" Width="174" Grid.Row="3"/>
+                <TextBox x:Name="inputHoursCount" HorizontalAlignment="Left" Height="31" Margin="189,0,0,0"  VerticalAlignment="Center" Width="128" Grid.Row="3"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="Добавить" HorizontalAlignment="Left" Height="30" Margin="370,188,0,0" VerticalAlignment="Top" Width="97" Click="Add_Click" Background="#FFD2D7F7"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Height="30" Margin="370,222,0,0" VerticalAlignment="Top" Width="97" Click="Clear_Click" Background="#FFD2D7F7"/>
+        <Button Content="О программе" HorizontalAlignment="Left" Height="30" Margin="370,257,0,0" VerticalAlignment="Top" Width="97" Click="About_Program_Click" Background="#FFD2D7F7"/>
+        <Button Content="Выход" HorizontalAlignment="Left" Height="30" Margin="370,292,0,0" VerticalAlignment="Top" Width="97" Click="Close_Click" Background="#FFD2D7F7"/>
+        <GroupBox Header="Поиск" Margin="478,171,0,0" Height="225" Width="300" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid>
+                <Label Content="Введите номер аудитории:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="findNumber" HorizontalAlignment="Left" Margin="198,5,0,0" VerticalAlignment="Top" Width="72" Height="26"/>
+                <Button Content="Найти" HorizontalAlignment="Center" VerticalAlignment="Top" Height="31" Width="251" Click="Find_Click" Margin="0,41,0,0" Background="#FFD2D7F7"/>
+                <TextBox x:Name="result" HorizontalAlignment="Center" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="268"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
